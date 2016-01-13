@@ -1,3 +1,6 @@
+<?php
+require('./config.php');
+?>
 <!DOCTYPE html>
 <html lang="en" ng-app="calcApp">
 	<head>
@@ -44,8 +47,8 @@
 										<div class="form-group">
 											<label for="inputWeight" class="col-sm-2 control-label">Weight</label>
 											<div class="col-sm-10">
-												<input type="number" min="1" max="727" maxlength="3" required name="weight"
-													ng-model="params.weight" ng-model-options="{ debounce: 500 }" class="form-control" placeholder="50">
+												<input type="number" min="<?=$oConfig->iMinWeight?>" max="<?=$oConfig->iMaxWeight ?>" maxlength="3" required name="weight"
+													ng-model="params.weight" ng-model-options="{ debounce: 500 }" class="form-control" placeholder="50" id="inputWeight">
 												<span class="error-hint" ng-show="calcData.weight.$error.required && !calcData.weight.$pristine;">You must enter your weight</span>
 												<span class="error-hint" ng-show="calcData.weight.$error.max">OMG, too max</span>
 												<span class="error-hint" ng-show="calcData.weight.$error.min">Whoops, so min</span>
@@ -57,8 +60,8 @@
 										<div class="form-group">
 											<label for="inputHeight" class="col-sm-2 control-label">Height</label>
 											<div class="col-sm-10">
-												<input type="number" min="50" max="246" maxlength="3" required name="height"
-													ng-model="params.height" ng-model-options="{ debounce: 500 }" class="form-control" placeholder="170">
+												<input type="number" min="<?=$oConfig->iMinHeight ?>" max="<?=$oConfig->iMaxHeight ?>" maxlength="3" required name="height"
+													ng-model="params.height" ng-model-options="{ debounce: 500 }" class="form-control" placeholder="170" id="inputHeight">
 												<span class="error-hint" ng-show="calcData.height.$error.required && !calcData.height.$pristine;">You must enter your height</span>
 												<span class="error-hint" ng-show="calcData.height.$error.max">Oh, you are too high</span>
 												<span class="error-hint" ng-show="calcData.height.$error.min">Sorry, you are too small</span>
@@ -70,8 +73,8 @@
 										<div class="form-group">
 											<label for="inputAge" class="col-sm-2 control-label">Age</label>
 											<div class="col-sm-10">
-												<input type="number" min="1" max="122" maxlength="3" required name="age"
-													ng-model="params.age" ng-model-options="{ debounce: 500 }" class="form-control" placeholder="30">
+												<input type="number" min="<?=$oConfig->iMinAge ?>" max="<?=$oConfig->iMaxAge ?>" maxlength="3" required name="age"
+													ng-model="params.age" ng-model-options="{ debounce: 500 }" class="form-control" placeholder="30" id="inputAge">
 												<span class="error-hint" ng-show="calcData.age.$error.required && !calcData.age.$pristine;">You must enter your age</span>
 												<span class="error-hint" ng-show="calcData.age.$error.max">My respect, but you're too old to think about health</span>
 												<span class="error-hint" ng-show="calcData.age.$error.min">It seems, you are too young for this test</span>
@@ -106,7 +109,7 @@
 												per day your body burns, and therefore the number of&#160;calories you could eat per day to&#160;maintain your current weight.</p>
 											<p>If&#160;your goal is&#160;to&#160;lose weight by&#160;burning off excess body fat, aim to&#160;eat 500 fewer calories per day than your
 												daily caloric needs, and maintain or&#160;increase your exercise activity.</p>
-											<p> The generally accepted rate of&#160;weight loss is&#160;1 to&#160;1.5 pounds per week or&#160;approximately 6 pounds per month.	If&#160;you eliminate
+											<p> The generally accepted rate of&#160;weight loss is&#160;1 to&#160;1.5 pounds per week or&#160;approximately 6 pounds per month. If&#160;you eliminate
 												500 kcal per day from your diet (or&#160;approximately 3500 kcal/week), you should be&#160;on&#160;track to&#160;meet this degree of&#160;weight loss.
 												Note: there is&#160;approximately 3500 calories per one pound of&#160;fat (0.45 kg).</p>
 											<p><strong>Warning!</strong></p>
@@ -150,7 +153,7 @@
 			</div>
 		</div>
 		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
-    	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
 		<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.0.0.js"></script>
 		<script src="/hireright/calc.js"></script>
 	</body>
