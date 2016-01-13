@@ -50,6 +50,7 @@ require('./config.php');
 												<input type="number" min="<?=$oConfig->iMinWeight?>" max="<?=$oConfig->iMaxWeight ?>" maxlength="3" required name="weight"
 													ng-model="params.weight" ng-model-options="{ debounce: 500 }" class="form-control" placeholder="50" id="inputWeight">
 												<span class="error-hint" ng-show="calcData.weight.$error.required && !calcData.weight.$pristine;">You must enter your weight</span>
+												<span class="error-hint" ng-show="calcData.weight.$invalid && !(calcData.weight.$error.required || calcData.weight.$error.max || calcData.weight.$error.min || calcData.weight.$pristine)">Sorry, only digits available</span>
 												<span class="error-hint" ng-show="calcData.weight.$error.max">OMG, too max</span>
 												<span class="error-hint" ng-show="calcData.weight.$error.min">Whoops, so min</span>
 												<span ng-show="calcData.weight.$valid || calcData.weight.$pristine;">in kilograms</span>
@@ -63,6 +64,7 @@ require('./config.php');
 												<input type="number" min="<?=$oConfig->iMinHeight ?>" max="<?=$oConfig->iMaxHeight ?>" maxlength="3" required name="height"
 													ng-model="params.height" ng-model-options="{ debounce: 500 }" class="form-control" placeholder="170" id="inputHeight">
 												<span class="error-hint" ng-show="calcData.height.$error.required && !calcData.height.$pristine;">You must enter your height</span>
+												<span class="error-hint" ng-show="calcData.height.$invalid && !(calcData.height.$error.required || calcData.height.$error.max || calcData.height.$error.min || calcData.height.$pristine)">Sorry, only digits available</span>
 												<span class="error-hint" ng-show="calcData.height.$error.max">Oh, you are too high</span>
 												<span class="error-hint" ng-show="calcData.height.$error.min">Sorry, you are too small</span>
 												<span ng-show="calcData.height.$valid || calcData.height.$pristine;">in centimeters</span>
@@ -76,6 +78,7 @@ require('./config.php');
 												<input type="number" min="<?=$oConfig->iMinAge ?>" max="<?=$oConfig->iMaxAge ?>" maxlength="3" required name="age"
 													ng-model="params.age" ng-model-options="{ debounce: 500 }" class="form-control" placeholder="30" id="inputAge">
 												<span class="error-hint" ng-show="calcData.age.$error.required && !calcData.age.$pristine;">You must enter your age</span>
+												<span class="error-hint" ng-show="calcData.age.$invalid && !(calcData.age.$error.required || calcData.age.$error.max || calcData.age.$error.min || calcData.age.$pristine)">Sorry, only digits available</span>
 												<span class="error-hint" ng-show="calcData.age.$error.max">My respect, but you're too old to think about health</span>
 												<span class="error-hint" ng-show="calcData.age.$error.min">It seems, you are too young for this test</span>
 												<span ng-show="calcData.age.$valid || calcData.age.$pristine;">in years</span>
