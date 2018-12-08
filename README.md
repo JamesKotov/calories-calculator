@@ -33,4 +33,4 @@ And, of cource, you need any web server for serve static and php scripts. On my 
 
 ### Demo
 
-Demo available at http://test4.strigo.ru/
+Demo available at http://strigo.ru/cc/
